@@ -28,9 +28,11 @@
   </style>
 </head>
 <body>
-  <h1 class="text-center">Hola Mundo</h1>
+  <h1>Hola Mundo</h1>
 
-  <h2>1. Versión mínima (solo funcional)</h2>
+  <h2>CURSO ALPINE.JS</h2>
+  <h3>Robert Van Der Graaff</h3>
+  <h4>1. Versión mínima (solo funcional)</h4>
   <div x-data="{ mensaje: '¡Hola Mundo!' }">
     <p x-text="mensaje"></p>
     <button @click="mensaje = '¡Hola desde Alpine.js!'">Cambiar mensaje</button>
@@ -38,12 +40,13 @@
 
   <hr>
 
-  <h2>2. Versión estilizada</h2>
+  <h4>2. Versión estilizada</h4>
   <div class="box" x-data="{ mensaje: '¡Hola Mundo!' }">
-    <h2 x-text="mensaje"></h2>
+    <h5 x-text="mensaje"></h5>
     <button @click="mensaje = '¡Hola desde Alpine.js estilizado!'">Cambiar mensaje</button>
   </div>
 
 </body>
 </html>
+
 
