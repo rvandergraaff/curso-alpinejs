@@ -40,13 +40,15 @@
 
   <!-- Botón de cambio de tema -->
   <div class="text-center mb-3">
-    <button class="btn btn-outline-primary" @click="
-      tema = tema === 'white' ? 'dark-neon' :
-             tema === 'dark-neon' ? 'dark-pastel' :
-             tema === 'dark-pastel' ? 'sky' : 'white'
-    ">
-      Cambiar tema
-    </button>
+   <button class="btn btn-outline-primary" @click="
+  tema = tema === 'white' ? 'dark-neon' :
+         tema === 'dark-neon' ? 'dark-pastel' :
+         tema === 'dark-pastel' ? 'sky' :
+         tema === 'sky' ? 'lime-creator' : 'white'
+">
+  Cambiar tema
+</button>
+
   </div>
 
   <!-- Sección 1: Código mínimo -->
@@ -72,5 +74,6 @@
 
 </body>
 </html>
+
 
 
