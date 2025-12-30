@@ -15,13 +15,13 @@
     .dark-pastel { background-color:#222; color:#ff9; }
     .dark-pastel button { border-color:#ff9; color:#ff9; background:none; }
 
-    .white { background-color:#d9d9d9; color:#4b0082; }  /* gris claro y púrpura profundo */
+    .white { background-color:#d9d9d9; color:#4b0082; }
     .white button { border-color:#4b0082; color:#4b0082; }
 
     .sky { background-color:#f0f8ff; color:#0a3; }
     .sky button { border-color:#0a3; color:#0a3; }
 
-    .lime-creator { background-color: #d4ff00; color: #333; } /* verde lima + gris oscuro */
+    .lime-creator { background-color: #d4ff00; color: #333; }
     .lime-creator button { border-color: #333; color: #333; background-color: #fff; }
     .lime-creator .box-min { background-color: rgba(255,255,255,0.2); }
     .lime-creator .box-styled { background-color: rgba(255,255,255,0.4); box-shadow:0 2px 6px rgba(0,0,0,0.2); }
@@ -34,7 +34,7 @@
     hr { margin:2rem 0; }
   </style>
 </head>
-<body x-data="{ tema:'white' }" :class="tema">
+<body x-data="{ tema:'white' }" x-bind:class="tema">
 
   <!-- Header -->
   <div class="header">
