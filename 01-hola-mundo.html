@@ -8,37 +8,60 @@
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { padding: 2rem; background-color: #f8f9fa; }
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
-    .header img { height: 50px; }
-    .box { padding: 1.5rem; border-radius: 8px; text-align: center; margin-top: 1rem; }
-    .box-min { background-color: #e9ecef; }
-    .box-styled { background-color: #e0f7fa; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    body { padding: 2rem; transition: background-color 0.3s, color 0.3s; }
+
+    /* Temas */
+    .dark-neon { background-color: #111; color: #0ff; }
+    .dark-neon button { border-color:#0ff; color:#0ff; background:none; }
+
+    .dark-pastel { background-color:#222; color:#ff9; }
+    .dark-pastel button { border-color:#ff9; color:#ff9; background:none; }
+
+    .white { background-color:#fff; color:#5f0; }
+    .white button { border-color:#5f0; color:#5f0; }
+
+    .sky { background-color:#f0f8ff; color:#0a3; }
+    .sky button { border-color:#0a3; color:#0a3; }
+
+    .header { text-align:center; margin-bottom:2rem; }
+    .header img { height:50px; margin-top:0.5rem; }
+    .box { padding:1.5rem; border-radius:8px; text-align:center; margin-top:1rem; }
+    .box-min { background-color: rgba(255,255,255,0.1); }
+    .box-styled { background-color: rgba(255,255,255,0.2); box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    hr { margin:2rem 0; }
   </style>
 </head>
-<body>
+<body x-data="{ tema:'white' }" :class="tema">
 
   <!-- Header -->
   <div class="header">
-    <div>
-      <h1 class="text-center">CURSO DE ALPINE.JS</h1>
-      <h5 class="text-center">Robert Van Der Graaff</h5>
-    </div>
-    <div>
-      <!-- Icono Alpine.js -->
-      <img src="https://raw.githubusercontent.com/alpinejs/alpine/main/alpine.svg" alt="Alpine.js">
-    </div>
+    <h1>CURSO DE ALPINE.JS</h1>
+    <h5>Robert Van Der Graaff</h5>
+    <img src="https://raw.githubusercontent.com/alpinejs/alpine/main/alpine.svg" alt="Alpine.js">
   </div>
 
-  <!-- Sección 1: Código Alpine.js sin estilo -->
+  <!-- Botón de cambio de tema -->
+  <div class="text-center mb-3">
+    <button class="btn btn-outline-primary" @click="
+      tema = tema === 'white' ? 'dark-neon' :
+             tema === 'dark-neon' ? 'dark-pastel' :
+             tema === 'dark-pastel' ? 'sky' : 'white'
+    ">
+      Cambiar tema
+    </button>
+  </div>
+
+  <!-- Sección 1: Código mínimo -->
   <h2>1. Versión mínima</h2>
   <div class="box box-min" x-data="{ mensaje: '¡Hola Mundo!' }">
     <p x-text="mensaje"></p>
     <button class="btn btn-primary mt-2" @click="mensaje = '¡Hola desde Alpine.js!'">Cambiar mensaje</button>
   </div>
 
-  <!-- Sección 2: Código Alpine.js estilizado con Bootstrap -->
-  <h2 class="mt-4">2. Versión estilizada (Bootstrap 5.3)</h2>
+  <hr>
+
+  <!-- Sección 2: Código estilizado con Bootstrap -->
+  <h2>2. Versión estilizada (Bootstrap)</h2>
   <div class="box box-styled" x-data="{ mensaje: '¡Hola Mundo!' }">
     <h2 x-text="mensaje"></h2>
     <button class="btn btn-success mt-2" @click="mensaje = '¡Hola desde Alpine.js estilizado!'">Cambiar mensaje</button>
@@ -51,4 +74,3 @@
 
 </body>
 </html>
-
